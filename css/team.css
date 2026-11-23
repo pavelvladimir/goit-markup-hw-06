@@ -1,0 +1,31 @@
+.team {
+  background-color: var(--cloud);
+}
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 72px 24px;
+}
+.team-card {
+  width: 264px;
+  border-radius: 0 0 4px 4px;
+  overflow: hidden;
+  background-color: white;
+  text-align: center;
+  box-shadow:
+    0 1px 6px rgb(46 47 66 / 8%),
+    0 1px 1px rgb(46 47 66 / 16%),
+    0 2px 1px rgb(46 47 66 / 8%);
+}
+.team-caption {
+  padding: 32px 0;
+}
+.team-caption .social-list {
+  margin-top: 8px;
+}
+@media (min-width: 768px) {
+  .team-list {
+    row-gap: 64px;
+  }
+}

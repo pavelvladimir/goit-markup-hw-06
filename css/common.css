@@ -1,0 +1,229 @@
+@import "./vendor/modern-normalize.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700&display=swap");
+
+@font-face {
+  font-family: "Roboto Local";
+  src: url("../fonts/roboto-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway Local";
+  src: url("../fonts/raleway-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --navy: #2e2f42;
+  --slate: #434455;
+  --iris: #4d5ae5;
+  --ocean: #404bbf;
+  --cloud: #f4f4fd;
+  --cornflower: #e7e9fc;
+  --muted: #8e8f99;
+  --motion: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+body {
+  font-family: Roboto, "Roboto Local", Arial, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--slate);
+  background-color: #fff;
+}
+body.overlay-open {
+  overflow: hidden;
+}
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+textarea {
+  font: inherit;
+  letter-spacing: inherit;
+}
+button {
+  cursor: pointer;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.sr-only {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  margin: -1px;
+}
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+@media (min-width: 320px) {
+  .container {
+    max-width: 320px;
+  }
+}
+.section {
+  padding-block: 96px;
+}
+.section-title {
+  margin-bottom: 72px;
+  text-align: center;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+}
+.card-title {
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.logo {
+  display: inline-block;
+  color: var(--navy);
+  font:
+    700 18px/1.17 Raleway,
+    "Raleway Local",
+    Arial,
+    sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: color var(--motion);
+}
+.logo-accent {
+  color: var(--iris);
+}
+.logo:is(:hover, :focus-visible) {
+  color: var(--ocean);
+}
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 169px;
+  min-height: 56px;
+  margin-inline: auto;
+  padding: 16px 24px;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--iris);
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 15%);
+  transition: background-color var(--motion);
+}
+.primary-button:is(:hover, :focus-visible) {
+  background-color: var(--ocean);
+}
+.social-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--cloud);
+  background-color: var(--iris);
+  transition: background-color var(--motion);
+}
+.social-link:is(:hover, :focus-visible) {
+  background-color: var(--ocean);
+}
+.close-button {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgb(0 0 0 / 10%);
+  padding: 0;
+  color: var(--navy);
+  background: var(--cornflower);
+  transition:
+    color var(--motion),
+    background-color var(--motion),
+    border-color var(--motion);
+}
+.close-button:is(:hover, :focus-visible) {
+  background-color: var(--ocean);
+  color: #fff;
+  border-color: transparent;
+}
+.form-status {
+  font-size: 14px;
+  line-height: 1.43;
+}
+.form-status:not(:empty) {
+  margin-block: 12px;
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-inline: 15px;
+  }
+  .section {
+    padding-block: 120px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--motion),
+    visibility var(--motion);
+}
+.overlay.is-open {
+  transition: opacity var(--motion);
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}

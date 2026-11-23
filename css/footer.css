@@ -1,0 +1,115 @@
+.footer {
+  padding-block: 96px;
+  background: var(--navy);
+  color: var(--cloud);
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.footer .logo {
+  color: var(--cloud);
+}
+.footer .logo:is(:hover, :focus-visible) {
+  color: #fff;
+}
+.footer-copy {
+  max-width: 288px;
+  text-align: left;
+  margin-top: 16px;
+}
+.footer-title {
+  margin-bottom: 16px;
+  color: #fff;
+  font-weight: 500;
+}
+.footer-social,
+.footer-subscription {
+  margin-top: 72px;
+}
+.footer-social .social-list {
+  gap: 16px;
+}
+.footer-social .social-link:is(:hover, :focus-visible) {
+  background-color: #31d0aa;
+}
+.subscription-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.subscription-input {
+  width: 288px;
+  max-width: 100%;
+  height: 40px;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  padding-inline: 16px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 15%);
+  transition: border-color var(--motion);
+}
+.subscription-input::placeholder {
+  color: rgb(255 255 255 / 70%);
+}
+.subscription-input:focus {
+  border-color: white;
+}
+.subscribe-button {
+  min-width: 165px;
+  min-height: 40px;
+  padding: 8px 24px;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .footer-content {
+    flex-flow: row wrap;
+    align-items: baseline;
+    text-align: left;
+  }
+  .footer-about {
+    margin-right: 24px;
+  }
+  .footer-copy {
+    max-width: 264px;
+  }
+  .footer-social {
+    margin-top: 0;
+  }
+  .subscription-form {
+    flex-direction: row;
+    gap: 24px;
+  }
+  .subscription-input {
+    width: 264px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1157px) {
+  .footer-content {
+    max-width: 584px;
+  }
+}
+@media (min-width: 1158px) {
+  .footer {
+    padding-block: 100px;
+  }
+  .footer-about {
+    margin-right: 120px;
+  }
+  .footer-social {
+    margin-right: 80px;
+  }
+  .footer-subscription {
+    margin-top: 0;
+  }
+  .subscription-input {
+    border-color: #fff;
+  }
+}

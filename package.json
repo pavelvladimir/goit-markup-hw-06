@@ -1,0 +1,19 @@
+{
+  "name": "goit-markup-webstudio",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@12.8.1",
+  "scripts": {
+    "preview": "sirv . --dev --host 127.0.0.1 --port 8000",
+    "format": "prettier --write index.html 'css/*.css' js tests playwright.config.js package.json",
+    "lint": "prettier --check index.html 'css/*.css' js tests playwright.config.js package.json && html-validate --preset standard --max-warnings 0 index.html",
+    "test": "playwright test",
+    "check": "pnpm run lint && pnpm run test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "html-validate": "11.16.2",
+    "prettier": "3.9.10",
+    "sirv-cli": "3.0.1"
+  }
+}

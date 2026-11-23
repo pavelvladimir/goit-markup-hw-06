@@ -1,0 +1,110 @@
+.header {
+  border-bottom: 1px solid var(--cornflower);
+  box-shadow:
+    0 2px 1px rgb(46 47 66 / 8%),
+    0 1px 1px rgb(46 47 66 / 16%),
+    0 1px 6px rgb(46 47 66 / 8%);
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .logo {
+  padding-block: 17px;
+}
+.menu-toggle {
+  border: 0;
+  background: transparent;
+  padding: 4px 0 4px 8px;
+  display: flex;
+  color: var(--navy);
+  transition: color var(--motion);
+}
+.menu-toggle:is(:hover, :focus-visible) {
+  color: var(--ocean);
+}
+.navigation,
+.header-contacts {
+  display: none;
+}
+.contact-link {
+  display: inline-block;
+  transition: color var(--motion);
+}
+.contact-link:is(:hover, :focus-visible) {
+  color: var(--ocean);
+}
+@media (min-width: 768px) {
+  .header-content {
+    justify-content: flex-start;
+  }
+  .navigation,
+  .header-contacts {
+    display: block;
+  }
+  .navigation {
+    margin-left: 120px;
+  }
+  .nav-list {
+    display: flex;
+    gap: 40px;
+  }
+  .nav-link {
+    position: relative;
+    display: block;
+    padding-block: 24px;
+    font-weight: 500;
+    color: var(--navy);
+    transition: color var(--motion);
+  }
+  .nav-link:is(.is-active, :hover, :focus-visible) {
+    color: var(--ocean);
+  }
+  .nav-link::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--ocean);
+    opacity: 0;
+    transition: opacity var(--motion);
+  }
+  .nav-link.is-active::after {
+    opacity: 1;
+  }
+  .header-contacts {
+    margin-left: auto;
+    font-style: normal;
+  }
+  .menu-toggle {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1157px) {
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-contacts .contact-link {
+    padding-block: 6px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+  }
+}
+@media (min-width: 1158px) {
+  .navigation {
+    margin-left: 76px;
+  }
+  .contacts-list {
+    display: flex;
+    gap: 40px;
+  }
+  .header-contacts .contact-link {
+    padding-block: 24px;
+  }
+}
