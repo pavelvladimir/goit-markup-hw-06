@@ -14,7 +14,7 @@ test("M1.1 M1.2 · semantic structure, headings and links", async ({ page }) => 
   await expect(page.locator("#footer")).toHaveCount(1);
   await expect(page.locator(".logo")).toHaveCount(2);
   for (const logo of await page.locator(".logo").all()) {
-    await expect(logo).toHaveAttribute("href", "./index.html");
+    await expect(logo).toHaveAttribute("href", "./hw-06.html");
     await expect(logo.locator("span")).toHaveText("Web");
   }
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Effective Solutions for Your Business");

@@ -5,8 +5,8 @@
   "packageManager": "pnpm@12.8.1",
   "scripts": {
     "preview": "sirv . --dev --host 127.0.0.1 --port 8000",
-    "format": "prettier --write index.html 'css/*.css' js tests playwright.config.js package.json",
-    "lint": "prettier --check index.html 'css/*.css' js tests playwright.config.js package.json && html-validate --preset standard --max-warnings 0 index.html",
+    "format": "prettier --write index.html hw-06.html 'css/*.css' js tests playwright.config.js package.json",
+    "lint": "prettier --check index.html hw-06.html 'css/*.css' js tests playwright.config.js package.json && html-validate --preset standard --max-warnings 0 index.html hw-06.html",
     "test": "playwright test",
     "check": "pnpm run lint && pnpm run test"
   },

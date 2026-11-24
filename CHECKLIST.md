@@ -1,8 +1,20 @@
 # WebStudio · kontrolní seznam úloh 1–6
 
-Posuzovanou verzí je jeden místní web podle rámců **Mobile, Tablet a Desktop** v úloze 6.
-Identifikátory v prvním sloupci spojují jednotlivé požadavky s testy v adresáři `tests`.
-Příkaz `pnpm check` spouští kontrolu formátu, validátor HTML a testy v Chromium, Firefoxu a WebKitu.
+První úloha se otevírá v [index.html](./index.html). Finální responzivní web je v [hw-06.html](./hw-06.html).
+Příkaz `pnpm check` ověří formát a HTML obou stránek a spustí testy v Chromiu, Firefoxu a WebKitu.
+
+## Připomínky k první úloze
+
+Každému bodu odpovídá jeden scénář v [testech první úlohy](./tests/homework-01.spec.js).
+
+- [x] **HW01.1** Anglický HTML dokument má doctype, kódování UTF-8, titulek a pořadí `header`, `main`, `footer`. Stránka neobsahuje autorské styly ani skripty.
+- [x] **HW01.2** Hlavička má textový odkaz `WebStudio`, navigaci se třemi funkčními kotvami a samostatný `address` s e-mailem a telefonem. Mobilní tlačítko do této úlohy nepatří.
+- [x] **HW01.3** Pod hlavičkou začíná `main` sekcemi `#hero`, `#features` a `#team` v tomto pořadí. Hero má předepsaný hlavní nadpis a tlačítko `Order Service` typu `button`.
+- [x] **HW01.4** V sekci `#features` je vidět nadpis `Our Features`. Každá ze čtyř položek obsahuje přímo `h3` a `p` s předepsaným textem. Sekce nemá `tabindex` ani stylovací třídy.
+- [x] **HW01.5** Čtyři týmové karty obsahují fotografii, jméno a roli v tomto pořadí. Portréty mají rozměry 264 × 260 a jejich `alt` přesně odpovídá jménu.
+- [x] **HW01.6** V patičce vede textový odkaz `WebStudio` na `./index.html`. Pod odkazem je předepsaná věta včetně znaku `&`.
+
+## Požadavky jednotlivých modulů
 
 | ID | Co vyžaduje zadání | Jak to ověřit |
 | --- | --- | --- |
@@ -32,6 +44,7 @@ Příkaz `pnpm check` spouští kontrolu formátu, validátor HTML a testy v Chr
 - [x] **M5.1–M5.3** · Oba formuláře, validace, fokus, návrat na spouštěcí tlačítko a vlastní checkbox.
 - [x] **M6.1–M6.3** · Tři rozvržení, menu a obrázky pro různé hustoty. Ověřeny šířky 320, 375, 767, 768, 1024, 1157, 1158, 1440 a 1920 px.
 - [x] **23. 11. 2026** · Prošlo 19 scénářů v každém ze tří prohlížečů (57/57). Prettier, HTML-Validate a samostatná kontrola HTML a CSS pomocí Nu HTML Checkeru prošly bez chyb. Desktopové hero, mobilní stránka, menu a dialog byly rovněž vizuálně porovnány s Figmou.
+- [x] **24. 11. 2026** · Prošlo 6 scénářů pro první úlohu a 19 pro finální web v každém ze tří prohlížečů (75/75). Obě stránky prošly Prettierem, HTML-Validate a Nu HTML Checkerem.
 
 ## Předlohy šesti modulů
 
@@ -52,6 +65,6 @@ Příkaz `pnpm check` spouští kontrolu formátu, validátor HTML a testy v Chr
 ## Odevzdání
 
 - [x] Kumulativní projekt se zdrojovými soubory, checklistem a testy.
-- Finální odevzdání má [repozitář](https://github.com/pavelvladimir/goit-markup-hw-06) a [živou stránku na GitHub Pages](https://pavelvladimir.github.io/goit-markup-hw-06/).
-- [ ] Šest samostatných repozitářů a jejich historická odevzdání. Tato pracovní složka obsahuje jednu finální verzi.
+- [Repozitář](https://github.com/pavelvladimir/goit-markup-hw-06) · [První úloha na GitHub Pages](https://pavelvladimir.github.io/goit-markup-hw-06/) · [Finální web na GitHub Pages](https://pavelvladimir.github.io/goit-markup-hw-06/hw-06.html).
+- [ ] Šest samostatných repozitářů a jejich historická odevzdání. První a šestá úloha mají v této pracovní složce své vlastní HTML soubory.
 - [ ] Odevzdání odkazů a ZIPu do LMS.

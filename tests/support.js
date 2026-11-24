@@ -6,7 +6,7 @@ const test = base.extend({
     await page.route("https://fonts.googleapis.com/**", (route) =>
       route.fulfill({ contentType: "text/css", body: "" }),
     );
-    await page.goto("/");
+    await page.goto("/hw-06.html");
     await page.evaluate(() => document.fonts.ready.then(() => true));
     await use(page);
   },

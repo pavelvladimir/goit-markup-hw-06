@@ -1,12 +1,12 @@
 # WebStudio
 
-Моя домашня робота з HTML та CSS. Зверстав адаптивну сторінку за макетом GoIT. У JavaScript додав мобільне меню та форму замовлення послуги. Дані з форми залишаються в браузері.
+У [першій роботі](./index.html) я розмітив сторінку на HTML. У [шостій роботі](./hw-06.html) додав адаптивну верстку, мобільне меню та форму замовлення послуги.
 
-[Відкрити WebStudio на GitHub Pages](https://pavelvladimir.github.io/goit-markup-hw-06/)
+GitHub Pages · [Перша робота](https://pavelvladimir.github.io/goit-markup-hw-06/) · [Фінальна версія за макетом Figma](https://pavelvladimir.github.io/goit-markup-hw-06/hw-06.html)
 
 ## Локальний запуск
 
-Я використовую Node.js 22 і pnpm. Після запуску відкриваю [локальну сторінку](http://127.0.0.1:8000/).
+Я використовую Node.js 22 і pnpm. Після запуску можна відкрити [першу роботу](http://127.0.0.1:8000/) або [адаптивну сторінку](http://127.0.0.1:8000/hw-06.html).
 
 ```sh
 pnpm install --frozen-lockfile
