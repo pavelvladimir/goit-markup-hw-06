@@ -21,7 +21,7 @@ test("HW01.1 · the home page is a complete HTML document without author styles 
   expect(await page.evaluate(() => document.styleSheets.length)).toBe(0);
 });
 
-test("HW01.2 · the header has a plain logo, three working section links and contact details", async ({ page }) => {
+test("HW01.2 · the header has a plain logo, three working fragment links and contact details", async ({ page }) => {
   const header = page.locator("header#header");
   await expectPlainLogo(header.locator(":scope > a"));
   await expect(header.locator(":scope > nav")).toHaveCount(1);
@@ -29,7 +29,7 @@ test("HW01.2 · the header has a plain logo, three working section links and con
   const links = header.locator("nav > ul > li > a");
   await expect(links).toHaveText(["Features", "Team", "Portfolio"]);
   for (const id of ["features", "team", "portfolio"]) {
-    const target = page.locator("main > section#" + id);
+    const target = page.locator("#" + id);
     await header.locator('nav a[href="#' + id + '"]').click();
     await expect(page).toHaveURL(new RegExp("#" + id + "$"));
     await expect(target).toBeInViewport();
@@ -38,12 +38,23 @@ test("HW01.2 · the header has a plain logo, three working section links and con
   await expect(contacts).toHaveText(["info@devstudio.com", "+11 (000) 111-11-11"]);
   await expect(contacts.first()).toHaveAttribute("href", "mailto:info@devstudio.com");
   await expect(contacts.last()).toHaveAttribute("href", "tel:+110001111111");
+  const portfolio = page.locator("footer a#portfolio");
+  await expect(portfolio).toHaveAttribute("href", "./hw-06.html#portfolio");
+  await portfolio.click();
+  await expect(page).toHaveURL(/\/hw-06\.html#portfolio$/);
+  await expect(page.locator("section#portfolio").getByRole("heading", { level: 2 })).toHaveText("Our Portfolio");
 });
 
-test("HW01.3 · hero, features and team appear in order under main", async ({ page }) => {
-  await expect(
-    page.locator("body > header#header + main > section#hero:first-child + section#features + section#team"),
-  ).toHaveCount(1);
+test("HW01.3 · main contains only the hero, features and team sections in order", async ({ page }) => {
+  const main = page.locator("body > main");
+  expect(
+    await main.locator(":scope > *").evaluateAll((nodes) => nodes.map((node) => [node.localName, node.id])),
+  ).toEqual([
+    ["section", "hero"],
+    ["section", "features"],
+    ["section", "team"],
+  ]);
+  await expect(main.locator("section")).toHaveCount(3);
   await expect(page.locator("h1")).toHaveCount(1);
   await expect(page.locator("#hero h1")).toHaveText("Effective Solutions for Your Business");
   await expect(page.locator("#hero").getByRole("button", { name: "Order Service", exact: true })).toHaveAttribute(
@@ -90,7 +101,7 @@ test("HW01.5 · each team portrait loads and its alternative text is exactly the
 });
 
 test("HW01.6 · footer has the plain home link and the required description", async ({ page }) => {
-  await expectPlainLogo(page.locator("footer#footer > a"));
+  await expectPlainLogo(page.locator("footer#footer").getByRole("link", { name: "WebStudio", exact: true }));
   await expect(page.locator("footer#footer > p")).toHaveText(
     "Increase the flow of customers and sales for your business with digital marketing & growth solutions.",
   );

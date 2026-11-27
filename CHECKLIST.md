@@ -8,8 +8,8 @@ Příkaz `pnpm check` ověří formát a HTML obou stránek a spustí testy v Ch
 Každému bodu odpovídá jeden scénář v [testech první úlohy](./tests/homework-01.spec.js).
 
 - [x] **HW01.1** Anglický HTML dokument má doctype, kódování UTF-8, titulek a pořadí `header`, `main`, `footer`. Stránka neobsahuje autorské styly ani skripty.
-- [x] **HW01.2** Hlavička má textový odkaz `WebStudio`, navigaci se třemi funkčními kotvami a samostatný `address` s e-mailem a telefonem. Mobilní tlačítko do této úlohy nepatří.
-- [x] **HW01.3** Pod hlavičkou začíná `main` sekcemi `#hero`, `#features` a `#team` v tomto pořadí. Hero má předepsaný hlavní nadpis a tlačítko `Order Service` typu `button`.
+- [x] **HW01.2** Hlavička má textový odkaz `WebStudio`, navigaci se třemi funkčními kotvami a samostatný `address` s e-mailem a telefonem. Kotva `#portfolio` vede na odkaz v patičce, který otevře portfolio ve finálním webu.
+- [x] **HW01.3** `main` obsahuje přesně tři sekce v pořadí `#hero`, `#features`, `#team`. Otevírací a zavírací značky každé sekce mají stejné odsazení. Hero má předepsaný hlavní nadpis a tlačítko `Order Service` typu `button`.
 - [x] **HW01.4** V sekci `#features` je vidět nadpis `Our Features`. Každá ze čtyř položek obsahuje přímo `h3` a `p` s předepsaným textem. Sekce nemá `tabindex` ani stylovací třídy.
 - [x] **HW01.5** Čtyři týmové karty obsahují fotografii, jméno a roli v tomto pořadí. Portréty mají rozměry 264 × 260 a jejich `alt` přesně odpovídá jménu.
 - [x] **HW01.6** V patičce vede textový odkaz `WebStudio` na `./index.html`. Pod odkazem je předepsaná věta včetně znaku `&`.
@@ -37,7 +37,7 @@ Každému bodu odpovídá jeden scénář v [testech první úlohy](./tests/home
 
 ## Výsledek ověření
 
-- [x] **M1.1–M1.2** · Sémantika, anglický obsah, kontakty a portréty. Odkaz Portfolio nyní vede na novou sekci se šesti projekty.
+- [x] **M1.1–M1.2** · Sémantika, anglický obsah, kontakty a portréty.
 - [x] **M2.1–M2.3** · Struktura CSS, normalizace, typografie, portfolio a interaktivní stavy.
 - [x] **M3.1–M3.2** · Flexbox, desktopová geometrie, rámečky a přístupný skrytý nadpis.
 - [x] **M4.1–M4.3** · Sprite, hero, sociální sítě, stíny, animace a překryvy.
